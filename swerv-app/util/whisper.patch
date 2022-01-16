@@ -1,0 +1,13 @@
+diff --git a/Memory.cpp b/Memory.cpp
+index 1039f70..384bc38 100644
+--- a/Memory.cpp
++++ b/Memory.cpp
+@@ -89,6 +89,8 @@ Memory::Memory(size_t size, size_t pageSize, size_t regionSize)
+   // Mark all regions as having neither iccm or dccm/mem-mappped-reg.
+   regionHasLocalInst_.resize(regionCount_);
+   regionHasLocalData_.resize(regionCount_);
++  // Define cache:
++  configureCache(32L*1024L*1024L, 64, 4);
+ }
+ 
+ 
